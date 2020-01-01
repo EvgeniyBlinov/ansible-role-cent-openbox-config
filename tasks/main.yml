@@ -11,10 +11,31 @@
 
 - set_fact:
     openbox__config_file: "{{ openbox__r_config_file.stdout }}"
-  when: openbox__config_file is not defined
+  when: openbox__config_file is not defined and
+    ( openbox__r_config_file.stdout | length ) > 0
+
+- set_fact:
+    openbox__config_file: ~/.config/openbox/lxde-rc.xml
+  when: openbox__config_file is not defined and
+    ( openbox__r_config_file.stdout | length ) == 0
+
+- set_fact:
+    openbox__config_file_link: >-
+      {{ openbox__config_file | dirname }}/lubuntu-rc.xml
+
+- name: openbox | Create config dir
+  file:
+    path: "{{ openbox__config_file | dirname }}"
+    state: directory
 
 - name: openbox | Generate openbox config
   template: 
     src: lxde-rc.xml
     dest: "{{ openbox__config_file }}"
     backup: yes
+
+- name: openbox | Create link
+  file:
+    src: "{{ openbox__config_file }}"
+    dest: "{{ openbox__config_file_link }}"
+    state: link
