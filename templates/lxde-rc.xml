@@ -180,6 +180,21 @@
         <command>/bin/bash /SETTINGS/home/user/myscripts/SYSTEM/touchpad_toggle.sh</command>
       </action>
     </keybind>
+    <keybind key="C-W-c">
+      <action name="Execute">
+        <command>/bin/bash /home/evgeniy/.screenlayout/clear.sh</command>
+      </action>
+    </keybind>
+    <keybind key="C-W-h">
+      <action name="Execute">
+        <command>/bin/bash /home/evgeniy/.screenlayout/hdmi_toggle_hor.sh</command>
+      </action>
+    </keybind>
+    <keybind key="C-W-v">
+      <action name="Execute">
+        <command>/bin/bash /home/evgeniy/.screenlayout/hdmi_toggle_vert.sh</command>
+      </action>
+    </keybind>
     <keybind key="W-e">
       <action name="Execute">
         <command>x-terminal-emulator -e "/usr/bin/vim -S ~/.vimsession.vim"</command>
@@ -253,7 +268,8 @@
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>/usr/bin/shutter -s</command>
+        <command>bash -c 'import /home/user/Pictures/image_$(date "+%F_%H:%M").png'</command>
+        <!--<command>/usr/bin/shutter -s</command>-->
       </action>
     </keybind>
     <keybind key="W-o">
