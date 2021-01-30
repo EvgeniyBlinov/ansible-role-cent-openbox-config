@@ -268,7 +268,7 @@
     </keybind>
     <keybind key="W-s">
       <action name="Execute">
-        <command>bash -c 'import /home/user/Pictures/image_$(date "+%F_%H:%M").png'</command>
+        <command>bash -c 'import /home/user/Pictures/image_$(date "+%F_%H:%M").png; xdg-open "$_"'</command>
         <!--<command>/usr/bin/shutter -s</command>-->
       </action>
     </keybind>
