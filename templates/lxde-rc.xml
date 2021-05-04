@@ -90,8 +90,8 @@
     <font place="ActiveOnScreenDisplay">
       <name/>
       <size>8</size>
-      <weight></weight>
-      <slant></slant>
+      <weight/>
+      <slant/>
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Sans</name>
@@ -172,27 +172,27 @@
     <!-- x-terminal-emulator - -geometry=200x50 -e "/usr/bin/show_apache_log.sh" -->
     <keybind key="Print">
         <action name="Execute">
-            <command>/bin/bash /SETTINGS/home/user/myscripts/bin/screenshot.sh</command>
+            <command>/bin/bash /home/user/.local/bin/screenshot.sh</command>
         </action>
     </keybind>
     <keybind key="XF86TouchpadToggle">
       <action name="Execute">
-        <command>/bin/bash /SETTINGS/home/user/myscripts/SYSTEM/touchpad_toggle.sh</command>
+        <command>/bin/bash /home/user/.local/bin/touchpad_toggle.sh</command>
       </action>
     </keybind>
     <keybind key="C-W-c">
       <action name="Execute">
-        <command>/bin/bash /home/evgeniy/.screenlayout/clear.sh</command>
+        <command>/bin/bash /home/user/.local/bin/screenshot.sh</command>
       </action>
     </keybind>
     <keybind key="C-W-h">
       <action name="Execute">
-        <command>/bin/bash /home/evgeniy/.screenlayout/hdmi_toggle_hor.sh</command>
+        <command>/bin/bash /home/user/.screenlayout/hdmi_toggle_hor.sh</command>
       </action>
     </keybind>
     <keybind key="C-W-v">
       <action name="Execute">
-        <command>/bin/bash /home/evgeniy/.screenlayout/hdmi_toggle_vert.sh</command>
+        <command>/bin/bash /home/user/.screenlayout/hdmi_toggle_vert.sh</command>
       </action>
     </keybind>
     <keybind key="W-e">
@@ -208,12 +208,12 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>/bin/bash /SETTINGS/home/user/myscripts/SYSTEM/touchpad_toggle.sh</command>
+        <command>/bin/bash /home/user/.local/bin/touchpad_toggle.sh</command>
       </action>
     </keybind>
     <keybind key="W-z">
       <action name="Execute">
-          <command>/bin/bash /home/user/.local/bin/touchpad_toggle.sh</command>
+        <command>/bin/bash /home/user/.local/bin/touchpad_toggle.sh</command>
       </action>
     </keybind>
     <keybind key="W-r">
@@ -228,7 +228,7 @@
     </keybind>
     <keybind key="W-g">
       <action name="Execute">
-        <command>geany</command>
+        <command>/bin/bash /home/user/.local/bin/go.sh</command>
       </action>
     </keybind>
     <keybind key="W-m">
@@ -237,6 +237,16 @@
       </action>
     </keybind>
     <keybind key="W-p">
+      <action name="Execute">
+        <command>mocp -G</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-o">
+      <action name="Execute">
+        <command>/home/user/.local/bin/keyboard_typing.sh</command>
+      </action>
+    </keybind>
+    <keybind key="Fn-p">
       <action name="Execute">
         <command>mocp -G</command>
       </action>
@@ -258,12 +268,12 @@
     </keybind>
     <keybind key="W-d">
       <action name="Execute">
-          <command>/home/user/firefox-dev.sh</command>
+        <command>/home/evgeniy/.screenlayout/hdmi_toggle.sh</command>
       </action>
     </keybind>
     <keybind key="W-v">
       <action name="Execute">
-          <command>/usr/bin/env viber</command>
+        <command>/usr/bin/env viber</command>
       </action>
     </keybind>
     <keybind key="W-s">
@@ -272,9 +282,14 @@
         <!--<command>/usr/bin/shutter -s</command>-->
       </action>
     </keybind>
+    <keybind key="W-i">
+      <action name="Execute">
+          <command>bash -c 'xclip -selection clipboard -t image/png -i $(ls -1 /home/user/Pictures/image_* |tail -1)'</command>
+      </action>
+    </keybind>
     <keybind key="W-o">
       <action name="Execute">
-          <command>bash ~/myscripts/MEDIA/screencast</command>
+        <command>bash ~/myscripts/MEDIA/screencast</command>
       </action>
     </keybind>
     <!-- skype -->
@@ -287,20 +302,15 @@
     </keybind>
     <keybind key="W-y">
       <action name="Execute">
-          <command>/usr/local/bin/skype.sh</command>
+        <command>/usr/local/bin/skype.sh</command>
       </action>
     </keybind>
     <keybind key="W-u">
       <action name="Execute">
-          <command>/usr/local/bin/skype.sh --dbpath=/home/user/.Skype2</command>
+        <command>/usr/local/bin/skype.sh --dbpath=/home/user/.Skype2</command>
       </action>
     </keybind>
     <!-- skype -->
-    <keybind key="W-i">
-      <action name="Execute">
-          <command>Telegram</command>
-      </action>
-    </keybind>
     <keybind key="W-x">
       <action name="Execute">
         <command>/usr/bin/xbmc</command>
@@ -361,7 +371,12 @@
     <!-- My settings-->
     <keybind key="W-h">
       <action name="Execute">
-        <command>sudo pm-hibernate</command>
+        <command>/home/evgeniy/.local/bin/bluetooth_audio.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-c">
+      <action name="Execute">
+        <command>/home/evgeniy/.screenlayout/clear.sh</command>
       </action>
     </keybind>
     <keybind key="C-A-Left">
